@@ -14,9 +14,8 @@ class SubAHomeUi extends StatefulWidget {
 }
 
 class _SubAHomeUiUiState extends State<SubAHomeUi> {
-
   List<String> imgCakeShop = [
-    'assets/images/01.jpg',
+    'assets/images/travel.png',
   ];
 
   List<CakeShop> cakeShops = [
@@ -28,42 +27,42 @@ class _SubAHomeUiUiState extends State<SubAHomeUi> {
     CakeShop(
       name: 'ตำรวจท่องเที่ยว',
       phone: '1155',
-      image1: 's11.jpg',
+      image1: 'bb.png',
     ),
     CakeShop(
       name: 'ตำรวจทางหลวง',
       phone: '1193',
-      image1: 's11.jpg',
+      image1: 'cc.png',
     ),
     CakeShop(
       name: 'ข้อมูลจราจร',
       phone: '1197',
-      image1: 's11.jpg',
+      image1: 'gg.png',
     ),
     CakeShop(
       name: 'ขสมก.',
       phone: '1348',
-      image1: 's11.jpg',
+      image1: 'dd.png',
     ),
     CakeShop(
       name: 'บขส.',
       phone: '1490',
-      image1: 's11.jpg',
+      image1: 'ee.png',
     ),
     CakeShop(
       name: 'เส้นทางบนทางด่วน',
       phone: '1543',
-      image1: 's11.jpg',
+      image1: 'exat.png',
     ),
-     CakeShop(
+    CakeShop(
       name: 'กรมทางหลวง',
       phone: '1586',
-      image1: 's11.jpg',
+      image1: 'hhh.png',
     ),
     CakeShop(
       name: 'การรถไฟแห่งประเทศไทย',
       phone: '1690',
-      image1: 's11.jpg',
+      image1: 'ii.png',
     ),
   ];
 
@@ -80,13 +79,16 @@ class _SubAHomeUiUiState extends State<SubAHomeUi> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-        title: Text(
-          'สายด่วนการเดินทาง',
+        title: const Text(
+          'สายด่วน\nการเดินทาง',
+          textAlign: TextAlign.center,
           style: TextStyle(
             color: Colors.black,
+            fontSize: 20,
           ),
         ),
-        centerTitle: true,
+        centerTitle:
+            true,
       ),
       body: Center(
         child: Column(
@@ -95,7 +97,7 @@ class _SubAHomeUiUiState extends State<SubAHomeUi> {
               itemCount: imgCakeShop.length,
               options: CarouselOptions(
                 height: 200,
-                autoPlay: true,
+                autoPlay: false,
                 autoPlayInterval: Duration(seconds: 2),
               ),
               itemBuilder: (context, index, realIndex) {
@@ -111,37 +113,35 @@ class _SubAHomeUiUiState extends State<SubAHomeUi> {
                 );
               },
             ),
-
             Expanded(
               child: ListView.separated(
-                itemCount: cakeShops.length,
-                separatorBuilder: (context, index) => Divider(
-                  color: Colors.grey,
-                ),
-                itemBuilder: (context, index) {
-                  return ListTile(
-                    onTap: (){
-                      _makePhoneCall(cakeShops[index].phone!);
-                    },
-                    leading: ClipRRect(
-                      borderRadius: BorderRadiusGeometry.circular(10.0),
-                      child: Image.asset(
-                        'assets/images/' + cakeShops[index].image1!,
+                  itemCount: cakeShops.length,
+                  separatorBuilder: (context, index) => Divider(
+                        color: Colors.grey,
                       ),
-                    ),
-                    title: Text(
-                      cakeShops[index].name!,
-                    ),
-                    subtitle: Text(
-                      cakeShops[index].phone!,
-                    ),
-                    trailing: Icon(
-                      Icons.info,
-                      color: Colors.black,
-                    ),
-                  );
-                }
-              ),
+                  itemBuilder: (context, index) {
+                    return ListTile(
+                      onTap: () {
+                        _makePhoneCall(cakeShops[index].phone!);
+                      },
+                      leading: ClipRRect(
+                        borderRadius: BorderRadiusGeometry.circular(10.0),
+                        child: Image.asset(
+                          'assets/images/' + cakeShops[index].image1!,
+                        ),
+                      ),
+                      title: Text(
+                        cakeShops[index].name!,
+                      ),
+                      subtitle: Text(
+                        cakeShops[index].phone!,
+                      ),
+                      trailing: Icon(
+                        Icons.phone_callback_outlined,
+                        color: Colors.black,
+                      ),
+                    );
+                  }),
             ),
           ],
         ),

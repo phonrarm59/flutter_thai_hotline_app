@@ -1,11 +1,11 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
+import 'package:flutter_cake_shop_app/about_ui.dart';
 import 'package:flutter_cake_shop_app/sub_a_home_ui.dart';
 import 'package:flutter_cake_shop_app/sub_b_home_ui.dart';
 import 'package:flutter_cake_shop_app/sub_c_home_ui.dart';
 import 'package:flutter_cake_shop_app/sub_d_home_ui.dart';
-
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -38,6 +38,17 @@ class _HomeUiState extends State<HomeUi> {
           style: TextStyle(color: Colors.white),
         ),
         centerTitle: true,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.info_outline, color: Colors.white),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const AboutUi()),
+              );
+            },
+          ),
+        ],
       ),
       body: showInbody[selectIndexItem],
       bottomNavigationBar: BottomNavigationBar(

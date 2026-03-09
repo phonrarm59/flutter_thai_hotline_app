@@ -37,14 +37,14 @@ class _SplashScreenUiState extends State<SplashScreenUi> {
         height: MediaQuery.of(context).size.height,
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/images/home_ui2.png"),
+            image: AssetImage('assets/images/home_ui4.png'),
             fit: BoxFit.cover,
           ),
         ),
         child: Center(
           child: Column(
             children: [
-              SizedBox(height: 500),
+              SizedBox(height: 400),
               Text(
                 'THAI HOTLINE APP',
                 style: TextStyle(
@@ -64,6 +64,7 @@ class _SplashScreenUiState extends State<SplashScreenUi> {
               CircularProgressIndicator(
                 color: Colors.white,
               ),
+              SizedBox(height: 20),
             ],
           ),
         ),
