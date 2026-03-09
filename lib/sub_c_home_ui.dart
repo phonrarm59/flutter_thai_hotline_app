@@ -16,6 +16,8 @@ class SubCHomeUi extends StatefulWidget {
 class _SubCHomeUiUiState extends State<SubCHomeUi> {
   List<String> imgCakeShop = [
     'assets/images/bank.png',
+    'assets/images/bank2.png',
+    'assets/images/atm.png',
   ];
 
   List<CakeShop> cakeShops = [
@@ -121,8 +123,8 @@ class _SubCHomeUiUiState extends State<SubCHomeUi> {
               itemCount: imgCakeShop.length,
               options: CarouselOptions(
                 height: 200,
-                autoPlay: false,
-                autoPlayInterval: Duration(seconds: 2),
+                autoPlay: true,
+                autoPlayInterval: Duration(seconds: 3),
               ),
               itemBuilder: (context, index, realIndex) {
                 return Container(
