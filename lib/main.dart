@@ -1,6 +1,7 @@
 
 // ignore_for_file: unused_import
 import 'package:flutter/material.dart';
+import 'package:flutter_cake_shop_app/introduction_call_ui.dart';
 import 'package:flutter_cake_shop_app/splash_screen_ui.dart';
 import 'package:flutter_cake_shop_app/sub_b_home_ui.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -9,7 +10,7 @@ void main() {
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplashScreenUi(),
+      home: IntroductionCallUI(),
     ),
   );
 }
